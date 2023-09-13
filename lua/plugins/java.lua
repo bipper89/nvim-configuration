@@ -131,6 +131,7 @@ return {
               if project_name then
                 local jdtls_cache_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name
                 vim.list_extend(cmd, {
+                  "-javaagent:" .. vim.fn.stdpath("data") .. "mason/packages/jdtls/lombok.jar",
                   "-configuration",
                   jdtls_cache_dir .. "/config",
                   "-data",
